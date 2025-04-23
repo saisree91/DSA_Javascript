@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    let st=[];
+   
+    let max=5;
+    let n;
+    size=st.length;
+    function push(n){
+        n= document.getElementById('insert').value;
+            st[size]=n;
+            size+=1;
+    
+        
+    }
+    function pop(){
+        if(size==0){
+            alert("stack is empty");
+        }
+        else{
+        st.length-=1;
+        size-=1;
+        }
+    }
+    
+    function display(){
+        document.write(st);
+    }
+
+    
+    
+</script>
+</head>
+<body>
+    <input type="text" placeholder="Enter element to be inserted" id="insert">
+    <button onclick="push()"> push </button>
+    <button onclick="pop()"> pop </button>
+    <button onclick="display()"> display </button>
+
+</body>
+</html>

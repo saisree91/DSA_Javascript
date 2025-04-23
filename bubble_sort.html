@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr=[6,5,4,3,2,1];
+        let n=arr.length-1;
+        while(n)
+    {
+        for(i=0;i<arr.length-1;i++){
+            if(arr[i+1]<arr[i]){
+                let temp=arr[i];
+                arr[i]=arr[i+1];
+                arr[i+1]=temp;
+            }
+        }
+        n--;
+    }
+
+    document.write(arr);
+    </script>
+    
+
+</head>
+<body>
+    
+</body>
+</html>
