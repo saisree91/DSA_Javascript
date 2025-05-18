@@ -13,7 +13,14 @@ class SLL:
             curr.next = prev
             prev = curr
             curr = next_node
-        self.head = prev
+        return prev
+
+    def traversal(self):
+        a = self.head
+        while a is not None:
+            print(a.data, end = " ")
+            a = a.next
+        print("\n")
 
     def palindrome(self):
         slow = self.head
@@ -34,17 +41,18 @@ class SLL:
         self.reverse(newhead)
         return True
 
-n1 = Node(1)
-n2 = Node(2)
+n1 = Node(int(input("enter node: ")))
+n2 = Node(int(input("enter node: ")))
 n1.next = n2
-n3 = Node(3)
+n3 = Node(int(input("enter node: ")))
 n2.next = n3
-n4 = Node(4)
+n4 = Node(int(input("enter node: ")))
 n3.next = n4
-n5 = Node(5)
+n5 = Node(int(input("enter node: ")))
 n4.next = n5
 sll = SLL()
 sll.head = n1
 
 
-sll.palindrome()
+print(sll.palindrome())
+sll.traversal()
