@@ -15,11 +15,34 @@ class SLL:
         node.next = self.head
         self.head = n0 
     def insert_at_end(self, node):
-        b = self.head
-        while b.next is not None:
-            b = b.next
-        b.next = node
+        a = self.head
+        while a.next is not None:
+            a = a.next
+        a.next = node
         node.next = None
+    def insert_at_specific(self, k, node):
+        a = self.head
+        for i in range(k-1):
+            a = a.next
+        node.next = a.next
+        a.next = node
+    def delete_begin(self):
+        a = self.head
+        self.head = a.next
+        a.next = None
+    def delete_end(self):
+        a = self.head
+        while a.next.next is not None:
+            a = a.next
+        a.next = None
+    def delete_at(self, k):
+        a = self.head
+        for i in range(k-1):
+            a = a.next
+        a.next = a.next.next
+    
+        
+        
         
 
 n1 = Node(1)
@@ -42,3 +65,17 @@ sll.traversal()
 n6 = Node(6)
 sll.insert_at_end(n6)
 sll.traversal()
+
+n7 = Node(7)
+sll.insert_at_specific(3, n7)
+sll.traversal()
+
+sll.delete_begin()
+sll.traversal()
+
+sll.delete_end()
+sll.traversal()
+
+sll.delete_at(4)
+sll.traversal()
+
