@@ -40,7 +40,15 @@ class SLL:
         for i in range(k-1):
             a = a.next
         a.next = a.next.next
-    
+    def detect_cycle(self):
+        slow = self.head
+        fast = self.head
+        while fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+            if(slow == fast):
+                return True
+        return False
         
         
         
@@ -54,28 +62,30 @@ n4 = Node(4)
 n3.next = n4
 n5 = Node(5)
 n4.next = n5
+n5.next = n3
 sll = SLL()
 sll.head = n1
-sll.traversal()
+# sll.traversal()
 
-n0 = Node(0)
-sll.insert_at_begin(n0)
-sll.traversal()
+# n0 = Node(0)
+# sll.insert_at_begin(n0)
+# sll.traversal()
 
-n6 = Node(6)
-sll.insert_at_end(n6)
-sll.traversal()
+# n6 = Node(6)
+# sll.insert_at_end(n6)
+# sll.traversal()
 
-n7 = Node(7)
-sll.insert_at_specific(3, n7)
-sll.traversal()
+# n7 = Node(7)
+# sll.insert_at_specific(3, n7)
+# sll.traversal()
 
-sll.delete_begin()
-sll.traversal()
+# sll.delete_begin()
+# sll.traversal()
 
-sll.delete_end()
-sll.traversal()
+# sll.delete_end()
+# sll.traversal()
 
-sll.delete_at(4)
-sll.traversal()
+# sll.delete_at(4)
+# sll.traversal()
 
+print(sll.detect_cycle())
